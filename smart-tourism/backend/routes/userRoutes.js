@@ -1,0 +1,10 @@
+const router = require("express").Router();
+const c = require("../controllers/userController");
+router.get("/", c.getAll);
+router.get("/:id/favorites", c.getFavorites);
+router.put("/:id/favorites/:targetId", c.togglePlace);
+router.put("/:id/favorite-destinations/:targetId", c.toggleDestination);
+router.get("/:id", c.getOne);
+router.put("/:id", c.update);
+router.delete("/:id", c.remove);
+module.exports = router;
